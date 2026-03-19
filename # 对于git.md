@@ -23,21 +23,22 @@
  $git remote rm <name> #本地忘记远程库
  $git push origin master #第一次push
 版本控制：
- $git log #近到远的更改版本
+ $git log #近到远的更改版本 #观看后想退出按q
  $git diff #查看更改
- $git reset --hard commit id or HEAD^.... #更改版本
- $git relog #历史操作
+ $git reset --hard commit id or HEAD^.... #更改版本（不要随意使用）
+ $git reflog #历史操作
+ $git remote -v #查练的哪个远程库
 分支控制：
  $git branch #我在哪
  $git branch -b 分支名 #更改分支
  
  $git checkout main
- $git merge dev #觉得 dev 里的代码写得太棒了，想把它放进 main 里时  #先回到主宇宙 把 dev 拽过来：
+ $git merge dev #（觉得 dev 里的代码写得太棒了，想把它放进 main 里时  #先回到主宇宙 把 dev 拽过来）
  $git branch -d dev #删除分支
  $git push origin 分支名 #本地第一次创建的送到远程
  $git push origin --delete 分支名 #删除云端的分支
 其他的：
- $git log --pretty=oneline #切换文件格式（含commit id）
+ $git log --pretty=oneline #展示提交记录（含commit id）
 
 
 ```
@@ -47,5 +48,5 @@
 3.check目标本地分支 pull
 #保证远程与本地文件一致
 4.强制把本地库与目标远程分支连接
-5.  删除远程与本地分支
->感觉自己这次的情况比较特殊，合并大致思路是这样，详情还是得问问gemini什么的
+5.删除远程与本地分支
+>感觉自己这次的情况比较特殊，合并大致思路是这样，详情还是得问问ai
