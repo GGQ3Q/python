@@ -13,19 +13,32 @@
  git add可以一次多加几个文件，commit一次性提交
 ## 一些基础指令
 ```git
+提交类：
+ $git init #初始化仓库
  $git add 文件名
  $git add . #添加所有##注意add与. 有个空格
  $git commit -m message #文件提交注释
+本地远程连接类：
+ $ git remote add origin github上的SSH地址 #第一次连接
+ $git remote rm <name> #本地忘记远程库
+ $git push origin master #第一次push
+版本控制：
  $git log #近到远的更改版本
  $git diff #查看更改
- $git log --pretty=oneline #切换文件格式（含commit id）
  $git reset --hard commit id or HEAD^.... #更改版本
  $git relog #历史操作
- $git init #初始化仓库
- $git branch -m master #更改分支
- $git push -m origin master #第一次push
- $git remote rm <name>
- $ git remote add origin github上的SSH地址
+分支控制：
+ $git branch #我在哪
+ $git branch -b 分支名 #更改分支
+ 
+ $git checkout main
+ $git merge dev #觉得 dev 里的代码写得太棒了，想把它放进 main 里时  #先回到主宇宙 把 dev 拽过来：
+ $git branch -d dev #删除分支
+ $git push origin 分支名 #本地第一次创建的送到远程
+ $git push origin --delete 分支名 #删除云端的分支
+其他的：
+ $git log --pretty=oneline #切换文件格式（含commit id）
+
 
 ```
 ## 合并分支：（对于不小心搞得两个重复的本地连接同一个库和分支混乱）
