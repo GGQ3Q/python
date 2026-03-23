@@ -178,7 +178,8 @@ pay1.__pay__()  # 输出: 微信收款 100 元
 pay2 = Zhifubao(200)
 pay2.__pay__()
 ```
-## 打开关闭文件
+## 读取文件内容
+### 打开关闭文件
 要打开一个文件，我们使用内置的open()函数。open()函数接受文件名和打开模式作为参数，并返回一个文件对象。
 ```python
 file = open('example.txt', 'r')
@@ -186,24 +187,54 @@ file = open('example.txt', 'r')
 
 file.close()
 #关闭文件
+```
+### 读写文件内容
+ 我们可以使用open()函数以及read()或者readline()方法来实现。
+ ```python
+ with open('file.txt', 'r') as file:#"r"只读模式
+    content = file.read()#实际应用中，我们还可以使用readline()方法逐行读取文件内容
+    print(content)
+```
+### 写入文件内容
+```python
+with open('file.txt', 'w') as file:
+    file.write('Hello, world!')
+```
+### 关闭文件
+在完成文件操作后，我们应当及时关闭文件，以释放系统资源。使用with语句可以帮助我们自动关闭文件，但在一些特殊情况下，我们也可以使用close()方法来手动关闭文件。
 
+## 文件和目录的管理
+### 目录的创建与删除
+```python
+import os
+os.mkdir('exmaple_dir')
+os.rmdir('new_dir')
+```
+### 目录的遍历
+os模块中的listdir()方法可以列出目录中的文件和子目录
+```python
+files=os.listdir('example_dir')
+for file in files
+	print(file)
+```
+### 文件路径的重命名与复制
+```python
+import os
+import shutil
 
+# 重命名文件
+os.rename('old_file.txt', 'new_file.txt')
 
+# 复制文件
+shutil.copy('source_file.txt', 'target_file.txt')
+```
+### 获取文件信息
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```python
+import os
+file_size=os.path.getsize('file.txt')
+create_time=os.path.geictime('同上')
+modify_time=os.path.getmtime('同上')
 
 
 
