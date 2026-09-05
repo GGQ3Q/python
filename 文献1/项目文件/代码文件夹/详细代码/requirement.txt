@@ -1,0 +1,6 @@
+# Python版本要求
+# Python 3.8.0或更高版本
+
+# 依赖库
+numpy>=1.20.0
+matplotlib>=3.5.0

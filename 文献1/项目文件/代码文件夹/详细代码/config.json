@@ -1,0 +1,46 @@
+{
+    "simulation": {
+        "dt": 0.01,
+        "max_time": 20.0,
+        "beta": 1.0,
+        "gamma": 1.0
+    },
+    "adaptive_stop": {
+        "pos_error_threshold": 0.05,
+        "vel_error_threshold": 0.05,
+        "hold_time": 1.0
+    },
+    "leader": {
+        "pos": [20.0, 50.0],
+        "vel": [6.0, 0.0],
+        "u": [0.0, 0.0]
+    },
+    "followers": [
+        {
+            "id": 1,
+            "pos": [6.0, 60.0],
+            "vel": [10.5, 5.0],
+            "desired_gap": [-15.0, 0.0],
+            "k": 0
+        },
+        {
+            "id": 2,
+            "pos": [10.0, 40.0],
+            "vel": [8.0, 4.0],
+            "desired_gap": [-10.0, 0.0],
+            "k": 1
+        },
+        {
+            "id": 3,
+            "pos": [16.0, 70.0],
+            "vel": [9.0, 3.0],
+            "desired_gap": [-5.0, 0.0],
+            "k": 1
+        }
+    ],
+    "topology_Case1": [
+        [0, 1, 1],
+        [1, 0, 1],
+        [1, 1, 0]
+    ]
+}
